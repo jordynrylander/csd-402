@@ -13,6 +13,7 @@ public class RockPaperScissors {
         Scanner input = new Scanner(System.in);
         Random random = new Random();
 
+// Generate a random choice for the computer (1-3)
         int computerChoice = random.nextInt(3) + 1;
 
         System.out.println("Rock-Paper-Scissors");
@@ -20,15 +21,18 @@ public class RockPaperScissors {
         System.out.println("2 = Paper");
         System.out.println("3 = Scissors");
 
+// Prompt the user for their choice
         System.out.print("Enter your choice (1-3): ");
         int userChoice = input.nextInt();
 
+// Get the move names for both computer and user choices
         String computerMove = getMoveName(computerChoice);
         String userMove = getMoveName(userChoice);
 
         System.out.println("Computer chose: " + computerMove);
         System.out.println("You chose: " + userMove);
 
+// Determine the winner
         if (userChoice < 1 || userChoice > 3) {
             System.out.println("Invalid choice. Please enter 1, 2, or 3.");
         } else if (computerChoice == userChoice) {
@@ -44,6 +48,7 @@ public class RockPaperScissors {
         input.close();
     }
 
+// Convert choice number to move name
     public static String getMoveName(int choice) {
         switch (choice) {
             case 1:
